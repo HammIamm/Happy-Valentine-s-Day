@@ -18,7 +18,7 @@ I lovee youu sayangg😖😖❤❤‼
 Sayangg sekalii samaa kamuu hihiii~ Kamu bakal selalu jadi Cindra yang lucuu itu di mata akuu 😚😚🤏🏻🤏🏻❤❤🫂🫂🧸🧸🤍🤍`;
 
 let index = 0;
-const speed = 50; // Kecepatan ngetik (ms)
+const speed = 50;
 const typingElement = document.getElementById("typing-text");
 
 function typeWriter() {
@@ -31,10 +31,10 @@ function typeWriter() {
 
 // *Slideshow Background*
 const images = [
-    "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg",
-    "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg",
-    "photo11.jpg", "photo12.jpg", "photo13.jpg", "photo14.jpg", "photo15.jpg",
-    "photo16.jpg", "photo17.jpg"
+    "./photo1.jpg", "./photo2.jpg", "./photo3.jpg", "./photo4.jpg", "./photo5.jpg",
+    "./photo6.jpg", "./photo7.jpg", "./photo8.jpg", "./photo9.jpg", "./photo10.jpg",
+    "./photo11.jpg", "./photo12.jpg", "./photo13.jpg", "./photo14.jpg", "./photo15.jpg",
+    "./photo16.jpg", "./photo17.jpg"
 ];
 
 let currentIndex = 0;
@@ -52,5 +52,5 @@ setInterval(changeBackground, 3000);
 
 window.onload = () => {
     setTimeout(typeWriter, 500);
-    changeBackground(); // Set background pertama kali
+    changeBackground();
 };
