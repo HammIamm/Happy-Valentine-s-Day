@@ -29,7 +29,7 @@ function typeWriter() {
     }
 }
 
-// *Slideshow Background*
+// *Background Slideshow*
 const images = [
     "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg",
     "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg",
@@ -41,25 +41,15 @@ let currentIndex = 0;
 
 function changeBackground() {
     let imagePath = images[currentIndex];
-
-    console.log("Changing background to:", imagePath); // Debugging
-
-    let img = new Image();
-    img.src = imagePath;
-    img.onload = () => {
-        document.body.style.backgroundImage = url('${imagePath}');
-    };
-    img.onerror = () => {
-        console.error("Gambar tidak ditemukan:", imagePath);
-    };
+    document.body.style.backgroundImage = url('${imagePath}');
+    console.log("Background berubah ke:", imagePath); // Debugging
 
     currentIndex = (currentIndex + 1) % images.length;
 }
 
-// Ganti background setiap 3 detik
-setInterval(changeBackground, 3000);
-
+// Mulai efek ngetik dan slideshow background saat halaman load
 window.onload = () => {
     setTimeout(typeWriter, 500);
-    changeBackground(); // Set background pertama
+    changeBackground(); // Load background pertama kali
+    setInterval(changeBackground, 3000); // Ganti background setiap 3 detik
 };
