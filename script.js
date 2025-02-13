@@ -29,7 +29,7 @@ function typeWriter() {
     }
 }
 
-// *Slideshow Background (Gambar ada di ROOT, bukan di folder images)*
+// *Slideshow Background*
 const images = [
     "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg",
     "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg",
@@ -41,19 +41,25 @@ let currentIndex = 0;
 
 function changeBackground() {
     let imagePath = images[currentIndex];
-    console.log("Changing background to:", imagePath); // Debugging biar tau path gambar bener atau enggak
-    document.body.style.backgroundImage = url('${imagePath}');
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
-    document.body.style.backgroundAttachment = "fixed"; // Biar background gak gerak pas scroll
+
+    console.log("Changing background to:", imagePath); // Debugging
+
+    let img = new Image();
+    img.src = imagePath;
+    img.onload = () => {
+        document.body.style.backgroundImage = url('${imagePath}');
+    };
+    img.onerror = () => {
+        console.error("Gambar tidak ditemukan:", imagePath);
+    };
+
     currentIndex = (currentIndex + 1) % images.length;
 }
 
-// Ganti background setiap 5 detik
-setInterval(changeBackground, 5000);
+// Ganti background setiap 3 detik
+setInterval(changeBackground, 3000);
 
-// Jalankan efek mengetik saat halaman dimuat
 window.onload = () => {
     setTimeout(typeWriter, 500);
-    changeBackground(); // Set background pertama kali
+    changeBackground(); // Set background pertama
 };
