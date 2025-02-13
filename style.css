@@ -10,17 +10,20 @@ body {
     height: 100vh;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     transition: background-image 1s ease-in-out;
-}
-
-.overlay {
-    background: rgba(0, 0, 0, 0.3); /* Efek gelap supaya teks lebih jelas */
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container {
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .card {
@@ -29,7 +32,6 @@ body {
     border-radius: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 90%;
     width: 400px;
 }
 
