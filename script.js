@@ -29,7 +29,7 @@ function typeWriter() {
     }
 }
 
-// *Background Slideshow*
+// *Slideshow Background*
 const images = [
     "photo1.jpg", "photo2.jpg", "photo3.jpg", "photo4.jpg", "photo5.jpg",
     "photo6.jpg", "photo7.jpg", "photo8.jpg", "photo9.jpg", "photo10.jpg",
@@ -47,9 +47,10 @@ function changeBackground() {
     currentIndex = (currentIndex + 1) % images.length;
 }
 
-// Mulai efek ngetik dan slideshow background saat halaman load
+// Ganti background setiap 3 detik
+setInterval(changeBackground, 3000);
+
 window.onload = () => {
     setTimeout(typeWriter, 500);
-    changeBackground(); // Load background pertama kali
-    setInterval(changeBackground, 3000); // Ganti background setiap 3 detik
+    changeBackground(); // Set background pertama kali
 };
